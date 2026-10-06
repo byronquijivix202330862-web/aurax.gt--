@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURAX MONTAÑISMO GT | Tienda Oficial & Expediciones</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: League Spartan -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #5CE1E6;
+            --primary-dark: #00B4B0;
+            --bg-dark: #0A0A0A;
+            --bg-card: #121212;
+            --bg-card-hover: #1A1A1A;
+            --text-light: #FFFFFF;
+            --text-gray: #B0B0B0;
+            --accent-red: #FF4D4D;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'League Spartan', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(92, 225, 230, 0.2);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+        }
+
+        .logo-container img {
+            height: 45px;
+            object-fit: contain;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 60px;
+            background: linear-gradient(180deg, rgba(10,10,10,0.7) 0%, rgba(10,10,10,1) 100%),
+                        radial-gradient(circle at center, rgba(92, 225, 230, 0.15) 0%, transparent 70%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 2;
+        }
+
+        .hero-images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero-images img {
+            max-height: 120px;
+            filter: drop-shadow(0 0 15px rgba(92, 225, 230, 0.4));
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            color: var(--text-light);
+            text-shadow: 0 0 20px rgba(92, 225, 230, 0.3);
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero-subtitle {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .hero-slogan {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+
+        /* Buttons */
+        .btn-main {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--primary);
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 14px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 0 20px rgba(92, 225, 230, 0.4);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(92, 225, 230, 0.7);
+            background-color: #72e8ec;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: #FFF;
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #20ba5a;
+            box-shadow: 0 0 30px rgba(37, 211, 102, 0.7);
+        }
+
+        /* General Sections */
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            position: relative;
+            letter-spacing: 1px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+            margin: 15px auto 0;
+            border-radius: 2px;
+            box-shadow: 0 0 10px var(--primary);
+        }
+
+        /* STORE SECTION */
+        .store-filters {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            padding: 10px 22px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: #000;
+            border-color: var(--primary);
+            box-shadow: 0 0 15px rgba(92, 225, 230, 0.3);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 25px rgba(92, 225, 230, 0.15);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background-color: #1a1a1a;
+        }
+
+        .product-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-category {
+            font-size: 0.8rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #FFFFFF;
+            margin-bottom: 15px;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-order-wa {
+            flex: 1;
+            background: var(--primary);
+            border: 1px solid var(--primary);
+            color: #000;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-order-wa:hover {
+            background: #72e8ec;
+        }
+
+        .btn-view {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            padding: 10px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-view:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* INSTAGRAM GALLERY SECTION */
+        .instagram-section {
+            background: #0D0D0D;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .instagram-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .instagram-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .instagram-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            text-decoration: none;
+            color: var(--text-light);
+            padding: 15px;
+            text-align: center;
+        }
+
+        .instagram-overlay i {
+            font-size: 2.2rem;
+            color: #E1306C;
+        }
+
+        .instagram-overlay span {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .instagram-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .instagram-item:hover .instagram-overlay {
+            opacity: 1;
+        }
+
+        /* MODAL PRODUCT DETAIL */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 3000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: var(--bg-card);
+            border: 1px solid var(--primary);
+            border-radius: 12px;
+            max-width: 600px;
+            width: 100%;
+            padding: 30px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.8rem;
+            color: var(--text-gray);
+            cursor: pointer;
+        }
+
+        .close-modal:hover { color: var(--primary); }
+
+        /* STRATEGIC & IDENTITY STYLES */
+        .grid-strategic {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .card-primary {
+            background-color: var(--bg-card);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 0 20px rgba(92, 225, 230, 0.1);
+        }
+
+        .card-primary h3 {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .objectives-block {
+            background: linear-gradient(145deg, #151515 0%, #0A0A0A 100%);
+            border: 1px solid rgba(92, 225, 230, 0.3);
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 30px;
+        }
+
+        .objectives-block h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .general-obj {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #FFFFFF;
+            background: rgba(92, 225, 230, 0.08);
+            padding: 20px;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            margin-bottom: 30px;
+        }
+
+        .specific-objs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .obj-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 25px;
+        }
+
+        .obj-number {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .mascot-section {
+            background: linear-gradient(135deg, rgba(18,18,18,1) 0%, rgba(10,10,10,1) 100%);
+            border-top: 1px solid rgba(92, 225, 230, 0.2);
+            border-bottom: 1px solid rgba(92, 225, 230, 0.2);
+        }
+
+        .mascot-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .mascot-image {
+            flex: 1;
+            min-width: 280px;
+            text-align: center;
+        }
+
+        .mascot-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(92, 225, 230, 0.2);
+            border: 2px solid var(--primary);
+        }
+
+        .mascot-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .mascot-info h3 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .badge-container {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .badge {
+            background: rgba(92, 225, 230, 0.1);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            background: var(--bg-card-hover);
+        }
+
+        .contact-card i { font-size: 2.5rem; color: var(--primary); }
+        .contact-card.tiktok i { color: #EE1D52; }
+        .contact-card.instagram i { color: #E1306C; }
+
+        footer {
+            background-color: #050505;
+            padding: 30px 5%;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; }
+            nav ul { flex-wrap: wrap; justify-content: center; }
+            .hero h1 { font-size: 2.5rem; }
+            .mascot-container { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo-container" onclick="scrollToSection('inicio')">
+            <img src="logo.png" alt="AuraX Logo">
+            <img src="mascota.png" alt="Mascota AuraX">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#tienda">Tienda</a></li>
+                <li><a href="#instagram">Instagram</a></li>
+                <li><a href="#estrategia">Estrategia</a></li>
+                <li><a href="#objetivos">Objetivos</a></li>
+                <li><a href="#mascota">Identidad</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <div class="hero-images">
+                <img src="logo.png" alt="Logo AuraX Montañismo GT">
+                <img src="mascota.png" alt="Mascota AuraX Wolf">
+            </div>
+            <h1>AURAX <span>MONTAÑISMO GT</span></h1>
+            <div class="hero-subtitle">"Más que caminar, vivir la montaña"</div>
+            <div class="hero-slogan">"Conquistando a Guate desde lo alto."</div>
+            
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="#tienda" class="btn-main">
+                    <i class="fa-solid fa-store"></i> Ver Tienda de Equipo
+                </a>
+                <a href="https://wa.me/50200000000?text=Hola%20AuraX%20Monta%C3%B1ismo!%20Deseo%20m%C3%A1s%20informaci%C3%B3n%20sobre%20las%20expediciones." 
+                   target="_blank" class="btn-main btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i> Contacto Directo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- E-COMMERCE / TIENDA SECTION -->
+    <section id="tienda">
+        <h2 class="section-title">Tienda de Equipo & Expediciones</h2>
+        
+        <!-- Filtros por Categoría (Sin Calzado) -->
+        <div class="store-filters">
+            <button class="filter-btn active" onclick="filterProducts('all', this)">Todos</button>
+            <button class="filter-btn" onclick="filterProducts('mochilas', this)">Mochilas</button>
+            <button class="filter-btn" onclick="filterProducts('camping', this)">Camping & Carpas</button>
+            <button class="filter-btn" onclick="filterProducts('expediciones', this)">Expediciones</button>
+        </div>
+
+        <!-- Grid de Productos -->
+        <div class="products-grid" id="productsGrid">
+            <!-- Productos generados dinámicamente mediante JS -->
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE INSTAGRAM -->
+    <section id="instagram" class="instagram-section">
+        <h2 class="section-title">Síguenos en Instagram</h2>
+        <p style="text-align: center; color: var(--text-gray); margin-top: -25px; margin-bottom: 40px;">
+            Fotos e historias de nuestras últimas expediciones. <a href="https://www.instagram.com/aurax_gt" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 700;">@aurax_gt</a>
+        </p>
+
+        <div class="instagram-grid">
+            <div class="instagram-item">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=600" alt="Instagram Post">
+                <a href="https://www.instagram.com/aurax_gt" target="_blank" class="instagram-overlay">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>Cima en Acatenango</span>
+                </a>
+            </div>
+            <div class="instagram-item">
+                <img src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=600" alt="Instagram Post">
+                <a href="https://www.instagram.com/aurax_gt" target="_blank" class="instagram-overlay">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>Campamento Bajo las Estrellas</span>
+                </a>
+            </div>
+            <div class="instagram-item">
+                <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&q=80&w=600" alt="Instagram Post">
+                <a href="https://www.instagram.com/aurax_gt" target="_blank" class="instagram-overlay">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>Ruta al Volcán Tajumulco</span>
+                </a>
+            </div>
+            <div class="instagram-item">
+                <img src="https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&q=80&w=600" alt="Instagram Post">
+                <a href="https://www.instagram.com/aurax_gt" target="_blank" class="instagram-overlay">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>Amanecer en las Alturas</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estrategia Corporativa -->
+    <section id="estrategia">
+        <h2 class="section-title">Pilares Estratégicos</h2>
+        
+        <div class="grid-strategic">
+            <div class="card-primary">
+                <h3><i class="fa-solid fa-compass"></i> Misión</h3>
+                <p>Brindar experiencias de montañismo, senderismo y ascenso de volcanes que inspiren a las personas a conectar con la naturaleza, superar sus propios límites y crear vínculos a través de la aventura, promoviendo siempre la seguridad, el respeto por el medio ambiente y el compañerismo en cada expedición.[cite: 1]</p>
+            </div>
+
+            <div class="card-primary">
+                <h3><i class="fa-solid fa-mountain-sun"></i> Visión</h3>
+                <p>Ser la comunidad líder de montañismo y aventura en Guatemala, reconocida por ofrecer experiencias auténticas, seguras y memorables, promoviendo una cultura de exploración responsable y convirtiéndose en un referente para quienes buscan descubrir nuevas cimas y vivir la montaña con pasión.[cite: 1]</p>
+            </div>
+        </div>
+
+        <!-- Objetivos Empresariales -->
+        <div id="objetivos" class="objectives-block">
+            <h3><i class="fa-solid fa-bullseye"></i> Objetivo General</h3>
+            <div class="general-obj">
+                Consolidar a Aurax Montañismo GT como una comunidad líder en montañismo y senderismo, ofreciendo experiencias seguras, memorables y responsables que fortalezcan la conexión entre las personas y la naturaleza.[cite: 1]
+            </div>
+
+            <h3 style="font-size: 1.6rem; margin-bottom: 25px;"><i class="fa-solid fa-list-check"></i> Objetivos Específicos</h3>
+            <div class="specific-objs-grid">
+                <div class="obj-card">
+                    <div class="obj-number">01</div>
+                    <p>Organizar expediciones de senderismo y ascenso de volcanes con altos estándares de seguridad y planificación.[cite: 1]</p>
+                </div>
+                <div class="obj-card">
+                    <div class="obj-number">02</div>
+                    <p>Fomentar el respeto por el medio ambiente mediante prácticas de turismo responsable y educación ambiental durante cada actividad.[cite: 1]</p>
+                </div>
+                <div class="obj-card">
+                    <div class="obj-number">03</div>
+                    <p>Promover la convivencia y el compañerismo, creando una comunidad donde los participantes compartan experiencias, aprendizajes y el espíritu de aventura.[cite: 1]</p>
+                </div>
+                <div class="obj-card">
+                    <div class="obj-number">04</div>
+                    <p>Desarrollar una marca reconocida por la calidad de sus experiencias, su profesionalismo y su compromiso con el montañismo y la exploración de los paisajes de Guatemala y la región.[cite: 1]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mascota / Identidad -->
+    <section id="mascota" class="mascot-section">
+        <h2 class="section-title">El Espíritu de AuraX</h2>
+        <div class="mascot-container">
+            <div class="mascot-image">
+                <img src="mascota.png" alt="Mascota Oficial AuraX">
+            </div>
+            <div class="mascot-info">
+                <h3>El Lobo de AuraX</h3>
+                <p>AuraX representa el espíritu de la montaña, la disciplina y la aventura que nos impulsa a llegar más alto. Nuestro símbolo encarna la determinación, la agilidad en la travesía y la lealtad al grupo o manada durante cada expedición.</p>
+                <p><em>"No buscamos ser los mejores, buscamos ser nuestra mejor versión. Somos AuraX."</em></p>
+                
+                <div class="badge-container">
+                    <span class="badge"><i class="fa-solid fa-bolt"></i> Pasión</span>
+                    <span class="badge"><i class="fa-solid fa-cubes-stacked"></i> Disciplina</span>
+                    <span class="badge"><i class="fa-solid fa-person-hiking"></i> Aventura</span>
+                    <span class="badge"><i class="fa-solid fa-users"></i> Comunidad</span>
+                    <span class="badge"><i class="fa-solid fa-flag"></i> Cumbre</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Rápido & Redes -->
+    <section id="contacto">
+        <h2 class="section-title">Contacto Directo</h2>
+        <div class="contact-grid">
+            <a href="https://wa.me/50200000000?text=Hola%20AuraX%20Monta%C3%B1ismo!" target="_blank" class="contact-card">
+                <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i>
+                <h4>WhatsApp</h4>
+                <p>Atención Inmediata</p>
+            </a>
+
+            <a href="tel:+50200000000" class="contact-card">
+                <i class="fa-solid fa-phone" style="color: #5CE1E6;"></i>
+                <h4>Llamada</h4>
+                <p>Atención al cliente</p>
+            </a>
+
+            <a href="https://www.instagram.com/aurax_gt" target="_blank" class="contact-card instagram">
+                <i class="fa-brands fa-instagram"></i>
+                <h4>Instagram</h4>
+                <p>@aurax_gt</p>
+            </a>
+
+            <a href="https://www.tiktok.com/@aurax546" target="_blank" class="contact-card tiktok">
+                <i class="fa-brands fa-tiktok"></i>
+                <h4>TikTok</h4>
+                <p>@aurax546</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Modal Detalle de Producto -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div id="modalBody">
+                <!-- Contenido dinámico del producto -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 AURAX MONTAÑISMO GT. Todos los derechos reservados. | Conquistando a Guate desde lo alto.[cite: 1]</p>
+    </footer>
+
+    <!-- JavaScript Lógica de Tienda -->
+    <script>
+        // Inventario de Productos (Sin categoría de Calzado)
+        const products = [
+            {
+                id: 1,
+                name: "Mochila Expedición 65 Litros",
+                category: "mochilas",
+                price: 620.00,
+                image: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=600",
+                desc: "Estructura ergonómica de aluminio, soporte lumbar ajustable y funda de lluvia incluida."
+            },
+            {
+                id: 2,
+                name: "Carpa 4 Estaciones (2 Personas)",
+                category: "camping",
+                price: 1100.00,
+                image: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&q=80&w=600",
+                desc: "Diseñada para resistir vientos fuertes en volcán Acatenango o Tajumulco. Varillas de duraluminio."
+            },
+            {
+                id: 3,
+                name: "Sleeping Bag -10°C Térmico",
+                category: "camping",
+                price: 480.00,
+                image: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&q=80&w=600",
+                desc: "Relleno de pluma sintética ultraligera de alta retención térmica para bajas temperaturas."
+            },
+            {
+                id: 4,
+                name: "Expedición Guiada: Volcán Tajumulco",
+                category: "expediciones",
+                price: 350.00,
+                image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=600",
+                desc: "Incluye guías certificados, equipo de comunicación, transporte y seguro de expedición."
+            },
+            {
+                id: 5,
+                name: "Bastones Trekking Carbono (Par)",
+                category: "camping",
+                price: 260.00,
+                image: "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?auto=format&fit=crop&q=80&w=600",
+                desc: "Sistema Quick-Lock antipánico, empuñadura de corcho natural ultraligero."
+            }
+        ];
+
+        // Inicializar Render de Productos
+        function renderProducts(items) {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = '';
+            items.forEach(product => {
+                const waMessage = encodeURIComponent(`Hola AuraX Montañismo GT! Me interesa comprar el producto: ${product.name} (Q${product.price.toFixed(2)})`);
+                grid.innerHTML += `
+                    <div class="product-card">
+                        <img src="${product.image}" alt="${product.name}" class="product-img">
+                        <div class="product-info">
+                            <div>
+                                <span class="product-category">${product.category}</span>
+                                <h3 class="product-title">${product.name}</h3>
+                                <div class="product-price">Q${product.price.toFixed(2)}</div>
+                            </div>
+                            <div class="product-actions">
+                                <a href="https://wa.me/50200000000?text=${waMessage}" target="_blank" class="btn-order-wa">
+                                    <i class="fa-brands fa-whatsapp"></i> Pedir
+                                </a>
+                                <button class="btn-view" onclick="openModal(${product.id})">
+                                    <i class="fa-solid fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Filtrar Productos
+        function filterProducts(category, btnElement) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            if (category === 'all') {
+                renderProducts(products);
+            } else {
+                const filtered = products.filter(p => p.category === category);
+                renderProducts(filtered);
+            }
+        }
+
+        // Modal de Vista Previa
+        function openModal(productId) {
+            const product = products.find(p => p.id === productId);
+            const modalBody = document.getElementById('modalBody');
+            const waMessage = encodeURIComponent(`Hola AuraX Montañismo GT! Me interesa comprar el producto: ${product.name} (Q${product.price.toFixed(2)})`);
+
+            modalBody.innerHTML = `
+                <img src="${product.image}" alt="${product.name}" style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+                <span class="product-category" style="margin-top: 10px; display: inline-block;">${product.category}</span>
+                <h2 style="color: #fff; margin-bottom: 10px;">${product.name}</h2>
+                <p style="color: var(--text-gray); font-size: 1.05rem;">${product.desc}</p>
+                <div class="product-price" style="font-size: 1.8rem; margin-top: 15px;">Q${product.price.toFixed(2)}</div>
+                <a href="https://wa.me/50200000000?text=${waMessage}" target="_blank" class="btn-main btn-whatsapp" style="width: 100%; justify-content: center; margin-top: 10px; text-decoration: none;">
+                    <i class="fa-brands fa-whatsapp"></i> Consultar / Pedir por WhatsApp
+                </a>
+            `;
+
+            document.getElementById('productModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('productModal').style.display = 'none';
+        }
+
+        function scrollToSection(id) {
+            document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Inicializar Tienda al Cargar
+        renderProducts(products);
+    </script>
+</body>
+</html>
